@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test project</title>
+
+
+    <link rel="stylesheet" href="test.css" />
+
+
+
+
+</head>
+
+<body>
+
+    <div class="modal calculator-modal" id="calculator" data-closable>
+        <div class="modal-content">
+            <h6 class="modal-title">
+                <span class="line">
+                    <span class="underline">Estimate</span>
+                    your
+                </span>
+                <span class="line">
+                    project
+                    <span class="underline">cost</span>
+                </span>
+            </h6>
+            <div class="modal-footer">
+                <a class="button default-button red-button" href="https://calculator.plat4m.com/" target="_blank">Start
+                    now</a>
+            </div>
+        </div>
+        <div class="calculator">
+            <ul class="calculator-list">
+                <li class="calculator-item">
+                    <span>Personal profiles</span>
+                    <span>2300</span>
+                </li>
+                <li class="calculator-item ">
+                    <i class="fas fa-check"></i>
+
+
+
+
+
+                    <span>News feed or user wall</span>
+                    <span>1900</span>
+                </li>
+                <li class="calculator-item">
+                    <span>Capture images</span>
+                    <span>1550</span>
+                </li>
+                <li class="calculator-item checked">
+                    <i class="fas fa-check"></i>
+                    <span>Live chat</span>
+                    <span>2160</span>
+                </li>
+
+                <li class="calculator-item checked">
+                    <i class="fas fa-check"></i>
+                    <span>Live call</span>
+                    <span>2160</span>
+                </li>
+                <li class="calculator-item ">
+
+
+
+                    <span>Push notifications</span>
+                    <span>5600</span>
+                </li>
+
+                <li class="calculator-item">
+                    <span>Image Editing</span>
+                    <span>2880</span>
+                </li>
+                <li class="calculator-item">
+                    <span>Group Chat</span>
+                    <span>2160</span>
+                </li>
+
+                <li class="calculator-item">
+                    <span>Payments</span>
+                    <span>5400</span>
+                </li>
+                <li class="calculator-item">
+                    <span>Live chat</span>
+                    <span>2160</span>
+                </li>
+            </ul>
+            <div class="calculator-mask"></div>
+        </div>
+
+
+        <button class="modal-close " type="button" data-close>
+            <span class="icon"
+                onclick='this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); return false;'>
+                <i class=" fas fa-times"></i>
+            </span>
+
+        </button>
+    </div>
+
+
+
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+
+    <script>
+
+        var tl = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+
+
+        tl.from(".modal-content", {
+            x: '150',
+            duration: 1,
+
+
+            ease: "Power2.easeInOut",
+
+
+        }
+
+
+
+
+
+
+
+        )
+
+
+        tl.from(".calculator-item", {
+            y: '-400',
+            duration: 2,
+            opacity: 1,
+            stagger: { // wrap advanced options in an object
+
+
+                from: "top",
+                ease: "power2.inOut",
+                repeat: 1,
+                // Repeats immediately, not waiting for the other staggered animations to finish
+            }
+
+        }, "<")
+
+
+
+        tl.from(".fa-check", {
+            y: -200,
+            duration: 1,
+            opacity: 0,
+            stagger: { // wrap advanced options in an object
+
+                from: "top",
+                ease: "power2.inOut",
+                repeat: 1,
+                // Repeats immediately, not waiting for the other staggered animations to finish
+            }
+
+        }, "<")
+
+        tl.from(".checked", {
+            paused: true,
+
+            ease: "back.in",
+            repeat: 1,
+
+            opacity: 0,
+
+            stagger: {
+                anount: 0.5,
+                from: "bottom",
+                grid: "auto"
+            }
+
+
+        }
+
+            // Repeats immediately, not waiting for the other staggered animations to finish
+
+
+            , "<")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        tl.from(".calculator", {
+
+
+
+            x: '-200',
+            duration: 2,
+            opacity: 0,
+            ease: "Power2.easeInOut",
+            /* delay: 0.1, */
+
+
+
+
+        }, "<")
+
+
+
+
+
+        function myFunction() {
+            var element = document.getElementsByClassName("calculator-item");
+            element.classList.add("checked");
+        }
+
+
+
+
+
+
+
+    </script>
+    <script src="https://kit.fontawesome.com/60a49cb542.js" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
